@@ -41,6 +41,12 @@ def apply_clearance(cart)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+  
+  cart.each do |item_hash|
+    if item_hash[:clearance]
+      item_hash[:price] = (item_hash[:price] * 0.8).round(2)
+    end
+  end
 end
 
 def checkout(cart, coupons)
