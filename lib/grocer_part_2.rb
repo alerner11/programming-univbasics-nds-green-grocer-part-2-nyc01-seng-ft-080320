@@ -26,6 +26,7 @@ def apply_coupons(cart, coupons)
            cart_with_coupons << coupon_hash
            cart_with_coupons[-1][:count] = item_hash[:count] % has_coupon[:num]
            item_hash[:count] = item_hash[:count] - cart_with_coupons[-1][:count]
+           puts cart_with_coupons
         end
         
         # now they definitely divide evenly
