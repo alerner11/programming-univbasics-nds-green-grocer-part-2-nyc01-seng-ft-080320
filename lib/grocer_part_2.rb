@@ -38,9 +38,6 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
   
   cart.each do |item_hash|
     if item_hash[:clearance]
@@ -50,15 +47,7 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  # Consult README for inputs and outputs
-  #
-  # This method should call
-  # * consolidate_cart
-  # * apply_coupons
-  # * apply_clearance
-  #
-  # BEFORE it begins the work of calculating the total (or else you might have
-  # some irritated customers
+  
   cart = consolidate_cart(cart)
   cart = apply_coupons(cart, coupons)
   cart = apply_clearance(cart)
@@ -72,5 +61,6 @@ def checkout(cart, coupons)
   if total > 100
     total = (total * 0.9).round(2)
   end
+  
   total
 end
