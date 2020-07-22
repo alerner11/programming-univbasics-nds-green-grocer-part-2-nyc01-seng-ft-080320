@@ -24,11 +24,9 @@ def apply_coupons(cart, coupons)
         orig_count = item_hash[:count]
         remainder = item_hash[:count] % has_coupon[:num]
         
-        # if it doesn't divide evenly, add coupon-less item to cart_with_coupons, update count for coupon-less item to equal remainder 
-        if remainder > 0
-          cart_with_coupons << item_hash
-          cart_with_coupons[-1][:count] = remainder
-        end
+        # add coupon-less item to cart_with_coupons, update count for coupon-less item to equal remainder 
+        cart_with_coupons << item_hash
+        cart_with_coupons[-1][:count] = remainder
         
         # now they definitely divide evenly
         cart_with_coupons << {
