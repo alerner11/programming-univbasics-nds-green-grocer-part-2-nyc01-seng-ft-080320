@@ -26,7 +26,8 @@ def apply_coupons(cart, coupons)
            puts cart_with_coupons
            puts item_hash[:count]
            cart_with_coupons[-1][:count] = item_hash[:count] % has_coupon[:num]
-           puts item_hash[:count]
+           cart_with_coupons[-1][:item] = "so weird"
+           puts item_hash[:item]
            item_hash[:count] = item_hash[:count] - cart_with_coupons[-1][:count]
            puts item_hash[:count]
         end
