@@ -19,7 +19,8 @@ def apply_coupons(cart, coupons)
       
       # check if there's enough in the cart to qualify for the coupon
       if item_hash[:count] >= has_coupon[:num] 
-        
+        orig_count = item_hash[:count]
+        remainder = 0
         # if it doesn't divide evenly, add coupon-less item to cart_with_coupons, update count for coupon-less item to equal remainder 
         if item_hash[:count] % has_coupon[:num] > 0
           remainder = item_hash[:count] % has_coupon[:num]
@@ -32,7 +33,7 @@ def apply_coupons(cart, coupons)
           item: "#{item_hash[:item]} W/COUPON",
           price: has_coupon[:cost].to_f / has_coupon[:num].to_f,
           clearance: item_hash[:clearance],
-          count: item_hash[:count]
+          count: orig_count - remainder
         }
       end
       
