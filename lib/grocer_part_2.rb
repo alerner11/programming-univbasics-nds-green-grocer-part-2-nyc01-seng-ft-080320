@@ -5,13 +5,9 @@ def apply_coupons(cart, coupons)
   cart_with_coupons = []
   
   cart.each do |item_hash|
-    # store whether there's a coupon for ease of typing later
-    # returns coupon hash if there is a coupon, nil if not
+
     has_coupon = find_item_by_name_in_collection(item_hash[:item], coupons)
     
-    # if the item has a coupon 
-    # then transfer the appropriate number of items to new W/COUPON item hash
-    # including cost per each in that W/COUPON item hash
     if has_coupon
       
       # check if there's enough in the cart to qualify for the coupon
