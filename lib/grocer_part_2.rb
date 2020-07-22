@@ -44,7 +44,7 @@ def apply_coupons(cart, coupons)
       cart_with_coupons << item_hash
     end
   end
-  puts cart_with_coupons
+  cart_with_coupons
 end
 
 def apply_clearance(cart)
@@ -65,3 +65,13 @@ def checkout(cart, coupons)
   # some irritated customers
 end
 
+cons_cart = [
+  {:item => "AVOCADO", :price => 3.00, :clearance => true, :count => 3},
+  {:item => "KALE",    :price => 3.00, :clearance => false, :count => 1}
+]
+
+coupons_list = [
+  {:item => "AVOCADO", :num => 2, :cost => 5.00}
+]
+
+apply_coupons(cons_cart, coupons_list)
