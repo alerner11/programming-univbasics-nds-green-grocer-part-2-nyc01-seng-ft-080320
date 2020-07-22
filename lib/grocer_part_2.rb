@@ -24,7 +24,8 @@ def apply_coupons(cart, coupons)
         if item_hash[:count] % has_coupon[:num] > 0
            coupon_hash = item_hash
            cart_with_coupons << coupon_hash
-           cart_with_coupons[-1][:count] = coupon_hash[:count] % has_coupon[:num]
+           cart_with_coupons[-1][:count] = item_hash[:count] % has_coupon[:num]
+           puts item_hash
            item_hash[:count] = item_hash[:count] - cart_with_coupons[-1][:count]
            puts cart_with_coupons
         end
