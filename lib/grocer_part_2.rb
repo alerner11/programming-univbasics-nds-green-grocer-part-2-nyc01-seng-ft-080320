@@ -37,7 +37,7 @@ def apply_coupons(cart, coupons)
         }
       end
       
-    # if there is no coupon, just shovel it into coupon_cart as is
+    # if there is no coupon, just shovel it into cart_with_coupons as is
     else
       cart_with_coupons << item_hash
     end
