@@ -15,8 +15,7 @@ def apply_coupons(cart, coupons)
       
         orig_count = item_hash[:count]
         remainder = item_hash[:count] % has_coupon[:num]
-        puts remainder
-        puts item_hash[:count]
+
         # add coupon-less item to cart_with_coupons, update count for coupon-less item to equal remainder 
         cart_with_coupons << item_hash
         cart_with_coupons[-1][:count] = remainder
