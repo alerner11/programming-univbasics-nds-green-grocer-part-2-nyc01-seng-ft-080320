@@ -19,8 +19,11 @@ def apply_coupons(cart, coupons)
       
       # check if there's enough in the cart to qualify for the coupon
       if item_hash[:count] >= has_coupon[:num] 
+        
+        # I DO NOT UNDERSTAND WHY WE NEED TO STORE THESE VALUES IN VARIABLES BUT OK
         orig_count = item_hash[:count]
         remainder = item_hash[:count] % has_coupon[:num]
+        
         # if it doesn't divide evenly, add coupon-less item to cart_with_coupons, update count for coupon-less item to equal remainder 
         if remainder > 0
           cart_with_coupons << item_hash
